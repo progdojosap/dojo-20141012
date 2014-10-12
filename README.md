@@ -55,8 +55,8 @@ PowerShellを実行
 
 ### NUnit.Snippets
 
--t - m - tab - tab で テストメソッド生成
--a - t - i - e - tab - tab で Assert.That(actual, Is.EqualTo(expected)) を生成
+- t - m - tab - tab で テストメソッド生成
+- a - t - i - e - tab - tab で Assert.That(actual, Is.EqualTo(expected)) を生成
 
 NuGetでインストール
 
