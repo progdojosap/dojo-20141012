@@ -84,4 +84,4 @@ gitnow-shFlags を サブプロジェクトの shFlags で置き換えること.
 git now で利用している getopt.exe は SourceTreeの msysgit には同梱されていない.
 仕方ないので、getoptのwindows版バイナリを手に入れ, /bin/git のいるフォルダに直接放りこんでやる。
 まず util-linux-ng for Windows から Binaries の Zip と Dependencies の Zip をダウンロードして解凍。
-Binaries/bin から getopt.exe を、Dependencies/bin から libintl3.dll を取り出して、Gitのインストールディレクトリ/bin に入れる（libintl3.dll は wget を入れるときに入れてた）。 
+Binaries/bin から getopt.exe を、Dependencies/bin から libintl3.dll を取り出して、Gitのインストールディレクトリ/bin に入れる。 
