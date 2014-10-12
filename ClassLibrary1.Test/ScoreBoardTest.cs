@@ -11,10 +11,17 @@ namespace ClassLibrary1.Test
     public class ScoreBoardTest
     {
         [Test]
-        public void ScoreBoardを生成した直後Playerのスコアは0である()
+        public void ScoreBoardを生成した直後Player1のスコアは0である()
         {
             int expected = 0;
             int actual = new ScoreBoard().getScorePlayer1();
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+        [Test]
+        public void ScoreBoardを生成した直後Player2のスコアは0である()
+        {
+            int expected = 0;
+            int actual = new ScoreBoard().getScorePlayer2();
             Assert.That(actual, Is.EqualTo(expected));
         }
     }
