@@ -25,7 +25,7 @@ namespace ClassLibrary1.Test
             Assert.That(actual, Is.EqualTo(expected));
         }
 
-        [Test]
+        [Test][Ignore]
         public void ScoreBoardを生成した直後にPlayer1にwonPointを実行すると1()
         {
             int expected = 1;
@@ -42,5 +42,21 @@ namespace ClassLibrary1.Test
             target.WonPoint(Player.Player2);
             Assert.That(target.getScorePlayer2(), Is.EqualTo(expected));
         }
+
+        [Test]
+        public void player1が指定された場合player1のスコアが１増える()
+        {
+
+            int expected = 3;
+            ScoreBoard target = new ScoreBoard();
+            target.WonPoint(Player.Player1);
+            target.WonPoint(Player.Player1);
+            target.WonPoint(Player.Player1);
+            
+            int actual = target.getScorePlayer1();
+            Assert.That(actual, Is.EqualTo(expected));
+            
+        }
+      
     }
 }
