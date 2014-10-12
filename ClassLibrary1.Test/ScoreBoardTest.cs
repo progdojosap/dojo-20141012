@@ -43,7 +43,23 @@ namespace ClassLibrary1.Test
             Assert.That(actual, Is.EqualTo(expected));
         }
 
+        [Test]
+        public void Player1とPlayer2にそれぞれ１ポイント追加したときにPlayer1は1ポイントPlayer2は1ポイントとなる()
+        {            
+            int expected = 1;
+            ScoreBoard target = new ScoreBoard();
+            target.WonPoint(Player.Player1);
+            target.WonPoint(Player.Player2);
+
+            int actual1 = target.getScorePlayer(Player.Player1);
+            int actual2 = target.getScorePlayer(Player.Player2);
+
+            Assert.That(actual1, Is.EqualTo(expected));
+            Assert.That(actual2, Is.EqualTo(expected));
+            
         
+        }
+      
       
     }
 }

@@ -31,8 +31,14 @@ namespace ClassLibrary1
         public void WonPoint(Player player)
         {
 
-            player1Score++;
-            player2Score++;
+            if (Player.Player1 == player)
+            {
+                player1Score++;
+            }
+            else
+            {
+                player2Score++;
+            }
 
         }
     }
