@@ -5,6 +5,12 @@ using System.Text;
 
 namespace ClassLibrary1
 {
+    public enum Player
+    {
+        Player1,
+        Player2
+    }
+
     public class ScoreBoard
     {
         int player1Score = 0;
@@ -18,6 +24,11 @@ namespace ClassLibrary1
         public int getScorePlayer2()
         {
             return this.player2Score;
+        }
+
+        public void WonPoint(Player player)
+        {
+            player1Score = 1;
         }
     }
 }

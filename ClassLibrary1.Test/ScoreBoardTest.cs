@@ -24,5 +24,15 @@ namespace ClassLibrary1.Test
             int actual = new ScoreBoard().getScorePlayer2();
             Assert.That(actual, Is.EqualTo(expected));
         }
+
+        [Test]
+        public void ScoreBoardを生成した直後にPlayer1にwonPointを実行すると1()
+        {
+            int expected = 1;
+            ScoreBoard target = new ScoreBoard();
+            target.WonPoint(Player.Player1);
+            Assert.That(target.getScorePlayer1(), Is.EqualTo(expected));  
+        }
+      
     }
 }
