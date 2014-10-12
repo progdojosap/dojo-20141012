@@ -33,6 +33,14 @@ namespace ClassLibrary1.Test
             target.WonPoint(Player.Player1);
             Assert.That(target.getScorePlayer1(), Is.EqualTo(expected));  
         }
-      
+
+        [Test]
+        public void ScoreBoardを生成した直後にPlayer2にwonPointを実行すると1()
+        {
+            int expected = 1;
+            ScoreBoard target = new ScoreBoard();
+            target.WonPoint(Player.Player2);
+            Assert.That(target.getScorePlayer2(), Is.EqualTo(expected));
+        }
     }
 }
