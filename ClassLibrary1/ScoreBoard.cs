@@ -16,21 +16,23 @@ namespace ClassLibrary1
         int player1Score = 0;
         int player2Score = 0;
 
-        public int getScorePlayer1()
+        public int getScorePlayer(Player player)
         {
-            return this.player1Score;
-        }
+            if (Player.Player1 == player) {
+                return this.player1Score;
+            }
+            else
+            {
+                return this.player2Score;
+            }
 
-        public int getScorePlayer2()
-        {
-            return this.player2Score;
         }
 
         public void WonPoint(Player player)
         {
 
             player1Score++;
-            player2Score = 1;
+            player2Score++;
 
         }
     }

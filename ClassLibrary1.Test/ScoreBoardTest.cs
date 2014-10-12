@@ -10,49 +10,36 @@ namespace ClassLibrary1.Test
     [TestFixture]
     public class ScoreBoardTest
     {
-        [Test]
-        public void ScoreBoardを生成した直後Player1のスコアは0である()
+        [TestCase(Player.Player1)]
+        [TestCase(Player.Player2)]
+        public void ScoreBoardを生成した直後Playerのスコアは0である(Player player)
         {
             int expected = 0;
-            int actual = new ScoreBoard().getScorePlayer1();
-            Assert.That(actual, Is.EqualTo(expected));
-        }
-        [Test]
-        public void ScoreBoardを生成した直後Player2のスコアは0である()
-        {
-            int expected = 0;
-            int actual = new ScoreBoard().getScorePlayer2();
+            int actual = new ScoreBoard().getScorePlayer(player);
             Assert.That(actual, Is.EqualTo(expected));
         }
 
-        [Test]
-        public void ScoreBoardを生成した直後にPlayer1にwonPointを実行すると1()
+        [TestCase(Player.Player1)]
+        [TestCase(Player.Player2)]
+        public void ScoreBoardを生成した直後にPlayerにwonPointを実行すると1(Player player)
         {
             int expected = 1;
             ScoreBoard target = new ScoreBoard();
-            target.WonPoint(Player.Player1);
-            Assert.That(target.getScorePlayer1(), Is.EqualTo(expected));  
+            target.WonPoint(player);
+            Assert.That(target.getScorePlayer(player), Is.EqualTo(expected));  
         }
 
-        [Test]
-        public void ScoreBoardを生成した直後にPlayer2にwonPointを実行すると1()
-        {
-            int expected = 1;
-            ScoreBoard target = new ScoreBoard();
-            target.WonPoint(Player.Player2);
-            Assert.That(target.getScorePlayer2(), Is.EqualTo(expected));
-        }
-
-        [Test]
-        public void player1が指定された場合player1のスコアが１増える()
+        [TestCase(Player.Player1)]
+        [TestCase(Player.Player2)]
+        public void player1が指定された場合player1のスコアが１増える(Player player)
         {
             int expected = 3;
             ScoreBoard target = new ScoreBoard();
-            target.WonPoint(Player.Player1);
-            target.WonPoint(Player.Player1);
-            target.WonPoint(Player.Player1);
-            
-            int actual = target.getScorePlayer1();
+            target.WonPoint(player);
+            target.WonPoint(player);
+            target.WonPoint(player);
+
+            int actual = target.getScorePlayer(player);
             Assert.That(actual, Is.EqualTo(expected));
         }
 
