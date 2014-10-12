@@ -29,7 +29,7 @@ namespace ClassLibrary1
         public void WonPoint(Player player)
         {
 
-            player1Score = 3;
+            player1Score++;
             player2Score = 1;
 
         }
